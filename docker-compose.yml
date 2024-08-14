@@ -1,0 +1,36 @@
+services:
+  app:
+    image: nest-practice-api
+    container_name: nest-practice-api
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.docker
+    ports:
+      - "3000:3000"
+    networks:
+      - nest-practice-network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    container_name: nest-practice-postgres
+    restart: always
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: nest-practice
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: "UTC"
+    ports:
+      - "5432:5432"
+    networks:
+      - nest-practice-network
+
+networks:
+  nest-practice-network:
+    driver: bridge
