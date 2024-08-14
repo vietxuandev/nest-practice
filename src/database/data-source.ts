@@ -24,7 +24,7 @@ export const dataSourceOptions: DataSourceOptions & SeederOptions = {
   migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
   migrationsTableName: 'migrations',
   seeds: [__dirname + '/seeds/**/*{.ts,.js}'],
-  factories: [__dirname + '/factories/**/*{.ts,.js}'],
+  factories: [__dirname + '/../**/*.factory{.ts,.js}'],
 };
 
 export const AppDataSource = new DataSource(dataSourceOptions);
