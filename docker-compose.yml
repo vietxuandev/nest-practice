@@ -22,7 +22,7 @@ services:
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: nest-practice-api
+      POSTGRES_DB: nest-practice
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       TZ: 'UTC'
