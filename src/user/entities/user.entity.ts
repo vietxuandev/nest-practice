@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { BaseEntity } from 'src/common/entities/base.entity';
-import { tableNames } from 'src/helpers/migration';
+import { tableNames } from 'src/database/helpers/migration';
 import { Column, Entity } from 'typeorm';
 
 @ObjectType()
